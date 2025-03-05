@@ -1,0 +1,52 @@
+package com.codegnan.cruddemo.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.codegnan.cruddemo.entity.Student;
+import com.codegnan.cruddemo.exception.StudentIdNotFoundException;
+import com.codegnan.cruddemo.repo.StudentRepository;
+
+
+@Service
+public class StudentServiceImpl implements StudentService{
+
+	
+	public StudentRepository studentRepository;
+	
+	public StudentServiceImpl(StudentRepository studentRepository) {
+		super();
+		this.studentRepository=studentRepository;
+	}
+	@Override
+	public List<Student> findAllStudents() {
+	
+		return null;
+	}
+
+	@Override
+	public Student findStudentById(int studentId) throws StudentIdNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Student saveStudent(Student student) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Student updateStudent(int StudentId, Student student) throws StudentIdNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Student deleteStudent(int studentId) throws StudentIdNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

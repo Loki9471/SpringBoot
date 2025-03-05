@@ -1,0 +1,5 @@
+package com.codegnan.cruddemo.rest;
+
+public class StudentRestController {
+
+}

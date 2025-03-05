@@ -1,0 +1,5 @@
+package com.codegnan.cruddemo.exception;
+
+public class StudentIdNotFoundException extends Exception {
+
+}

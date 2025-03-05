@@ -1,0 +1,19 @@
+package com.codegnan.cruddemo.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.codegnan.cruddemo.service.ProductService;
+
+
+@RestController
+public class RestController {
+ public ProductService productService;
+
+ 
+ @Autowired
+public RestController(ProductService productService) {
+	super();
+	this.productService = productService;
+}
+ 
+}

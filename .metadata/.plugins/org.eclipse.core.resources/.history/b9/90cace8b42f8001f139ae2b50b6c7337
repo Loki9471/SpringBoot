@@ -1,0 +1,30 @@
+package com.codegnan.cruddemo.rest;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.codegnan.cruddemo.entity.Product;
+import com.codegnan.cruddemo.service.ProductService;
+
+
+@RestController
+public class ProductRestController {
+ public ProductService productService;
+
+ 
+ @Autowired
+public ProductRestController(ProductService productService) {
+	super();
+	this.productService = productService;
+}
+ 
+ @GetMapping("/api/products")
+ public List<Product> getAllProduct(){
+	 return productService.findAllProducts();
+ }
+ public 
+ 
+}

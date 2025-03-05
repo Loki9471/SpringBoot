@@ -1,0 +1,51 @@
+package com.codegnan.cruddemo.rest;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.codegnan.cruddemo.entity.Student;
+import com.codegnan.cruddemo.exception.StudentIdNotFoundException;
+import com.codegnan.cruddemo.service.StudentService;
+
+@RestController
+@RequestMapping("/api/student/")
+public class StudentRestController {
+public StudentService studentService;
+
+
+@Autowired
+public StudentRestController(StudentService studentService) {
+	super();
+	this.studentService = studentService;
+}
+@GetMapping
+public List<Student> getAllStudent(){
+	return studentService.findAllStudents();
+	
+}
+@GetMapping("{studentId}")
+public Student findStudentById(@PathVariable int studentId) throws StudentIdNotFoundException {
+	Student student=studentService.findStudentById(studentId);
+	if(student==null) {
+	System.out.println("Student Id Not Found ");
+	}
+	return student;
+	
+}
+@PostMapping
+public Student addStudent(@RequestBody Student student) {
+	student.setId(0);
+	Student dbStudent=studentService.saveStudent(student);
+	return dbStudent;
+	
+}
+@PutMapping
+public Student editStudent(@PathVariable int studentId,@RequestBody Student student)
+}

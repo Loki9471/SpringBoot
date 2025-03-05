@@ -1,0 +1,5 @@
+package com.codegnan.cruddemo.entity;
+
+public class Product {
+
+}
