@@ -29,11 +29,11 @@ public class ProductRestController {
         this.productService = productService;
     }
 
-    @GetMapping("/api/products/")
+    @GetMapping("/api/products")
     public List<Product> getAllProduct(){
         return productService.findAllProducts();
     }
-    @PostMapping
+    @PostMapping("")
     public Product addProduct(@RequestBody Product product) {
     	product.setId(0);
     	Product dbProduct=productService.addProduct(product);

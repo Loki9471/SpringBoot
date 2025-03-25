@@ -1,5 +1,0 @@
-package com.codegnan.cruddemo.repo;
-
-public interface StudentRepository {
-
-}
