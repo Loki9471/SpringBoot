@@ -14,12 +14,12 @@ public class College {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 private int id;
 	@Column(name="name")
-private String branch;
+private String name;
 	@Column(name="branch")
 private String department;
-public College(String branch, String department) {
+public College(String name, String department) {
 	super();
-	this.branch = branch;
+	this.name = name;
 	this.department = department;
 }
 public College() {
@@ -32,11 +32,11 @@ public int getId() {
 public void setId(int id) {
 	this.id = id;
 }
-public String getBranch() {
-	return branch;
+public String getName() {
+	return name;
 }
-public void setBranch(String branch) {
-	this.branch = branch;
+public void setName(String name) {
+	this.name = name;
 }
 public String getDepartment() {
 	return department;
@@ -46,7 +46,7 @@ public void setDepartment(String department) {
 }
 @Override
 public String toString() {
-	return "College [id=" + id + ", branch=" + branch + ", department=" + department + "]";
+	return "College [id=" + id + ", name=" + name + ", department=" + department + "]";
 }
 
 }
